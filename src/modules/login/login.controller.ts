@@ -8,6 +8,7 @@ export class LoginController {
 
   @Post()
   async login(@Body() data: LoginDto) {
+    console.log("entrei aqui no async login")
     return this.loginService.login(data);
   }
 }

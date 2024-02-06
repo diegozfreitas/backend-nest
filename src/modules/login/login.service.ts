@@ -7,10 +7,13 @@ export class LoginService {
   constructor(private prisma: PrismaService) {}
 
   async login(data: LoginDto) {
+    console.log("entrei aqui dentro login")
     const rightUserAndPassword = {
       username: 'admin@admin.com',
       password: '1q2w3e4r',
     };
+
+    console.log("entrei aqui dentro login 1")
 
     if (
       data.username !== rightUserAndPassword.username ||
@@ -18,6 +21,8 @@ export class LoginService {
     ) {
       throw new Error('Verify your credentials');
     }
+
+    console.log("entrei aqui dentro login 3")
 
     return {
       token: 'exemple',
